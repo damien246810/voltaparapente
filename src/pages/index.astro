@@ -1,11 +1,136 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <main class="flex flex-col min-h-screen bg-white text-gray-900">
+    <!-- Section avec image ou vidéo de fond -->
+    <div class="relative h-screen w-full overflow-hidden">
+      <!-- Vidéo de fond -->
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/video/biplace-drone.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas les vidéos HTML5.
+      </video>
+
+      <Navbar />
+
+      <!-- Contenu central -->
+      <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white bg-black/10">
+        <h1 class="text-4xl md:text-6xl font-bold">Parapente à Ovronnaz</h1>
+        <p class="mt-4 text-lg md:text-2xl">
+          Vivez l’aventure du parapente biplace dans un cadre exceptionnel.
+        </p>
+        <a href="/reservation" class=" mt-6 px-5 py-2 bg-yellow-400 rounded-xl text-white font-semibold hover:bg-yellow-500 transition">
+          Réserver maintenant
+        </a>
+      </div>
+    </div>
+
+    <!-- Section description -->
+    <section id="description" class="py-16">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="text-3xl font-bold mb-6">Découvrez la liberté en altitude</h2>
+        <p class="text-lg text-gray-700">
+          Volta Parapente vous emmène découvrir Ovronnaz comme vous ne l’avez jamais vu !
+          Tout l’hiver, envolez-vous pour un vol biplace en parapente, skis aux pieds, et admirez le domaine depuis les airs.
+        </p>
+        <p class="text-lg text-gray-700 mt-4">
+          Volta Parapente, c’est l’aventure de deux frères passionnés, Damien et Lucas Ruffieux, qui partagent depuis 
+          longtemps leur passion du vol. Forts de leur grande expérience dans la région, ils vous accueillent
+          avec simplicité, bonne humeur et professionnalisme, pour vous offrir un moment magique en toute sécurité.
+        </p>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-5 py-16 space-y-16" id="best-seller">
+      <!-- Premier vol -->
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <!-- Description -->
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Le <span class="italic">Vol Montagne</span></h2>
+          <p class="text-gray-700 mb-4">
+            Notre vol préféré ! Envolez-vous depuis Tsantonnaire, skis aux pieds, et profitez d’un panorama 
+            unique sur tout le domaine d’Ovronnaz. Une expérience idéale pour un premier vol ou pour offrir 
+            un moment magique, en toute sécurité.
+          </p>
+          <!-- Liste des inclusions -->
+          <ul class="space-y-2 mb-6 text-gray-700 list-disc list-inside">
+            <li>
+              Décollage sous la buvette de Tsantonnaire
+            </li>
+            <li>
+              Atterissage sur les terrains du centre sportif, à côté du départ du télésiège Jorasse
+            </li>
+            <li>
+              Plus de 1000m de dénivelé !
+            </li>
+            <li>
+              Prix : 150CHF
+            </li>
+            <li>
+              Option photos et vidéo : 40CHF
+            </li>
+          </ul>
+          <a href="/reservation" class="px-5 py-2 bg-yellow-400 rounded-xl text-white font-semibold hover:bg-yellow-500 transition">
+            Réserver maintenant
+          </a>
+        </div>
+        <!-- Image -->
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
+          <img src="/images/grand-vol.jpg" alt="Vol Paris New York" class="w-full h-full object-cover" />
+        </div>    
+      </div>
+
+      <!-- Deuxième vol -->
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <!-- Image -->
+        <div class="order-1 md:order-none aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
+          <img src="/images/vol.jpg" alt="Vol Tokyo" class="w-full h-full object-cover" />
+        </div>
+        <!-- Description -->
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Le <span class="italic">Tsantonnaire Express</span></h2>
+          <p class="text-gray-700 mb-4">
+            Notre format le plus pratique ! Offrez-vous un vol le temps d’une 
+            descente, skis aux pieds, sans préparation particulière. 
+          </p>
+          <!-- Liste des inclusions -->
+          <ul class="space-y-2 mb-6 text-gray-700 list-disc list-inside">
+            <li>
+              Option vol de proximité ; sensations garanties !
+            </li>
+            <li>
+              Départ depuis la buvette de Tsantonnaire 
+            </li>
+            <li>
+              Atterissage à côté du départ du téléski de Tsantonnaire 
+            </li>
+            </li>
+            <li>
+              Prix : 50CHF
+            </li>
+            </li>
+            <li>
+              Option photos et vidéos : 20CHF 
+            </li>
+          </ul>
+          <a href="/reservation" class="px-5 py-2 bg-yellow-400 rounded-xl text-white font-semibold hover:bg-yellow-500 transition">
+            Réserver maintenant
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <Footer />
+  </main>
 </Layout>
