@@ -9,13 +9,22 @@ import Footer from "../components/Footer.astro";
 
   <!-- Hero -->
   <section 
-    class="relative h-[75vh] bg-cover bg-center flex items-center justify-center text-center"
+    class="relative h-full bg-cover bg-center flex items-center justify-center text-center"
     style="background-image: url('/images/vol3.jpg');"
   >
 
+    <div class="absolute inset-0 bg-black/25"></div>
+
+    <a href="#about-us" class="z-10 flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-full transition">
+      Découvrir l’équipe
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+
   </section>
 
-    <section id="about-us" class="py-16 bg-black/5">
+    <section id="about-us" class="py-16 bg-black/5 scroll-mt-6">
     <div class="container mx-auto px-5 text-center">
         <div class="max-w-3xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
