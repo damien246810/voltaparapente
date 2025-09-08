@@ -11,8 +11,12 @@ const links = [
   <div class="container mx-auto flex items-center justify-between py-2 px-5">
     <!-- Logo -->
     <a href="/">
-      <img src="/images/logo.png" alt="Logo Volta" class="h-10 w-10" />
+      <!-- Logo clair (visible par défaut, cache en mode sombre) -->
+      <img id="mode-claire" src="/images/logo.png" alt="Logo Volta" class="h-12 w-auto dark:hidden transition-all duration-500" />
+      <!-- Logo sombre (caché par défaut, visible en mode sombre) -->
+      <img id="mode-sombre" src="/images/logoblanc.png" alt="Logo Volta" class="h-12 w-auto hidden dark:block transition-all duration-500" />
     </a>
+
 
     <!-- Hamburger mobile -->
     <button id="menu-btn" class="md:hidden flex flex-col gap-1" aria-label="Toggle menu">
@@ -39,15 +43,20 @@ const links = [
     const navbar = document.getElementById("navbar");
     const btn = document.getElementById("menu-btn");
     const menu = document.getElementById("menu");
-
+    const claire = document.getElementById("mode-claire");
+    const sombre = document.getElementById("mode-sombre");
     // Scroll effect
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
         navbar.classList.add("backdrop-blur-md", "bg-black/80", "shadow-lg");
         navbar.classList.remove("bg-transparent");
+        claire.src = "/images/logoblanc.png";
+        sombre.src = "/images/logo.png";
       } else {
         navbar.classList.add("bg-transparent");
         navbar.classList.remove("backdrop-blur-md", "bg-black/80", "shadow-lg");
+        claire.src = "/images/logo.png";
+        sombre.src = "/images/logoblanc.png";
       }
     });
 
