@@ -11,13 +11,16 @@ import FAQ from "../components/FAQ.astro";
     <div class="relative h-screen w-full overflow-hidden">
       <!-- Vidéo de fond -->
       <video
+        id="hero-video"
         autoplay
         loop
         muted
         playsinline
+        preload="auto"
+        poster="/images/express2.jpg"
         class="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/video/starter.mp4" type="video/mp4" />
+        <source src="/video/Starter_ultra_light.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas les vidéos HTML5.
       </video>
 
