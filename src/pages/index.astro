@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FAQ from "../components/FAQ.astro";
 ---
 
 <Layout>
@@ -16,14 +17,14 @@ import Footer from '../components/Footer.astro';
         playsinline
         class="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/video/biplace-drone.mp4" type="video/mp4" />
+        <source src="/video/starter.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas les vidéos HTML5.
       </video>
 
       <Navbar />
 
       <!-- Contenu central -->
-      <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white bg-black/10">
+      <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white">
         <h1 class="text-4xl md:text-6xl font-bold">Parapente à Ovronnaz</h1>
         <p class="mt-4 text-lg md:text-2xl">
           Vivez l’aventure du parapente biplace dans un cadre exceptionnel.
@@ -65,9 +66,23 @@ import Footer from '../components/Footer.astro';
           <ul class="space-y-2 mb-6 text-gray-700 list-disc list-inside">
             <li>
               Décollage sous la buvette de Tsantonnaire
+                <a
+                  href="https://maps.app.goo.gl/e18SxeA274R9jcFbA"
+                  target="_blank"
+                  class="font-semibold italic text-blue-600 hover:underline"
+                >
+                  Voir sur Google Maps
+                </a>
             </li>
             <li>
               Atterissage sur les terrains du centre sportif, à côté du départ du télésiège Jorasse
+                <a
+                  href="https://maps.app.goo.gl/JzbG6vX6zZQh9uuA9"
+                  target="_blank"
+                  class="font-semibold italic text-blue-600 hover:underline"
+                >
+                  Voir sur Google Maps
+                </a>
             </li>
             <li>
               Plus de 1000m de dénivelé !
@@ -247,10 +262,24 @@ import Footer from '../components/Footer.astro';
               Option vol de proximité ; sensations garanties !
             </li>
             <li>
-              Départ depuis la buvette de Tsantonnaire 
+              Départ depuis la buvette de Tsantonnaire
+                <a
+                  href="https://maps.app.goo.gl/e18SxeA274R9jcFbA"
+                  target="_blank"
+                  class="font-semibold italic text-blue-600 hover:underline"
+                >
+                  Voir sur Google Maps
+                </a> 
             </li>
-            <li>
-              Atterissage à côté du départ du téléski de Tsantonnaire 
+            <li>  
+                Atterissage à côté du départ du téléski de Tsantonnaire
+                <a
+                  href="https://maps.app.goo.gl/TRZYjmFskTvxmNS37"
+                  target="_blank"
+                  class="font-semibold italic text-blue-600 hover:underline"
+                >
+                  Voir sur Google Maps
+                </a>
             </li>
             </li>
             <li>
@@ -266,7 +295,126 @@ import Footer from '../components/Footer.astro';
           </a>
         </div>
       </div>
-    </section>
+    </section>    
+
+<section class="w-full py-16">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Titre -->
+    <h2 class="mb-10 text-3xl font-bold tracking-tight text-center">
+      FAQ-Foire aux questions
+    </h2>
+
+    <!-- Liste des questions -->
+    <div class="space-y-2">
+
+    <FAQ
+      question="Quel niveau est requis en ski ou en snowboard ?"
+      answer="Il est recommandé de pouvoir descendre confortablement la piste du téléski de Tsantonnaire, classée rouge."
+    />
+
+    <FAQ
+      question="Le forfait de ski est-il inclus dans le tarif ?"
+      answer="Le forfait n’est pas compris dans le prix. Les détenteurs du Magic Pass peuvent accéder aux pistes librement."
+    />
+
+    <FAQ
+      question="Est-il possible de pratiquer le vol à pieds ?"
+      answer="L’accès au décollage est réservé aux participants munis de skis ou d’un snowboard, le vol à pieds n’est pas autorisé."
+    />
+
+    <FAQ
+      question="Faut-il prévoir un équipement spécifique ?"
+      answer="L’équipement standard de ski ou de snowboard convient parfaitement."
+    />
+
+    <FAQ
+      question="Existe-t-il une limite d’âge pour participer ?"
+      answer="L’activité est accessible dès l’âge de 5 ans. Pour les participants mineurs (moins de 18 ans), une autorisation parentale est requise."
+    />
+
+    <FAQ
+      question="Puis-je utiliser une GoPro ou une caméra pendant le vol ?"
+      answer="Oui, l’utilisation d’une caméra est autorisée, à condition qu’elle soit correctement sécurisée, par exemple attachée au poignet ou à l’aide d’un mousqueton."
+    />
+
+    <FAQ
+      question="Comment reçoit-on les photos et vidéos ?"
+      answer="Si vous avez choisi l’option photos/vidéos, celles-ci vous seront transférées directement sur votre téléphone à la fin du vol."
+    />
+
+    <FAQ
+      question="Mes proches peuvent-ils assister au décollage et à l’atterrissage ?"
+      answer="Oui, le décollage et l’atterrissage ont lieu à proximité immédiate des pistes, ce qui permet à vos proches de suivre le vol depuis celles-ci."
+    />
+
+    <FAQ
+      question="Est-il possible d’emporter un sac avec soi ?"
+      answer="Oui, il est possible d’emporter un petit sac à dos."
+    />
+
+
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Titre -->
+    <h2 class="text-3xl font-bold mb-8 text-center">
+      Informations de rendez-vous
+    </h2>
+
+    <!-- Contenu en flex responsive -->
+    <div class="flex flex-col lg:flex-row items-center lg:item-center gap-8">
+      
+      <!-- Liste à gauche -->
+      <div class="lg:w-1/2 space-y-4">
+        <h3 class="text-xl font-semibold">Lieu de rendez-vous</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Rendez-vous devant la buvette au sommet du téléski de <span class="font-bold italic">Tsantonnaire</span>.</li>
+          <li>Arriver <span class="font-bold italic">10 minutes</span> avant l’heure prévue.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-4">Comment s'y rendre</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Prévoyez 1H à partir du départ du télésiège de Jorasse (départ à côté du parking)</li>
+          <li>Empruntez les trois installations suivantes :
+            <!-- Sous-liste avec numéros -->
+            <ul class="ml-6 mt-2 space-y-2">
+              <li class="flex items-center space-x-2">
+                <span class="flex items-center justify-center w-6 h-6 bg-red-500 text-white text-sm font-bold rounded-full">1</span>
+                Télésiège de<span class="font-bold italic">&nbsp;Jorasse</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="flex items-center justify-center w-6 h-6 bg-red-500 text-white text-sm font-bold rounded-full">2</span>
+                Télésiège de <span class="font-bold italic">&nbsp;Bougnogne</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="flex items-center justify-center w-6 h-6 bg-red-500 text-white text-sm font-bold rounded-full">3</span>
+                Téléski de <span class="font-bold italic">&nbsp;Tsantonnaire</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+
+      <!-- Image à droite -->
+      <div class="lg:w-1/2">
+        <img src="/images/piste.jpg" alt="Lieu de rendez-vous" class="rounded-lg shadow-md w-full object-cover" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Elfsight Google Reviews | Untitled Google Reviews -->
+<!-- <script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-c5662bfc-ecf3-48e0-a2b0-69f85f66c865 m-6" data-elfsight-app-lazy></div> -->
+
 
 
 
