@@ -65,9 +65,13 @@ const links = [
       if (menu.classList.contains("max-h-0")) {
         menu.classList.remove("max-h-0");
         menu.classList.add("max-h-96"); // ajustable selon le nombre de liens
+        navbar.classList.add("bg-black/95"); // navbar entier devient noir NEW
+        navbar.classList.remove("bg-transparent"); // ← essentiel !
       } else {
         menu.classList.add("max-h-0");
         menu.classList.remove("max-h-96");
+        navbar.classList.remove("bg-black/95"); // navbar redevient transparent NEW
+        navbar.classList.add("bg-transparent"); // ← remettre transparent
       }
     });
   </script>
